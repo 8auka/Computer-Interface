@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>AC Catering | Sign in</title>
+    <link rel="stylesheet" href="css/login.css" media="screen" type="text/css" />
+</head>
+<body>
+    <div class="menu">
+        <ul id = "left">
+            <li><a href="main.html">Home</a></li>
+            <li><a>About us</a></li>
+            <li><a class ="menu-events">Menu</a></li>
+            <li><a class ="menu-chef">Our Team</a></li>
+            <li><a class ="menu-contact">Contact us</a></li>
+        </ul>
+    </div>
+    <div id="login-form">
+      <h1>Sign in</h1>
+        <fieldset>
+            <form name="vform" onsubmit="return Validate()">
+                <input name="username" type="text"  placeholder="Type a user name" onBlur="" onFocus=""> <div class="val_error" id="name_error"></div>
+                <input name="password" type="password" placeholder="Password"  onBlur="" onFocus=""> <div class="val_error" id="pass_error"></div>
+                <input type="submit" value="Submit">
+            </form>
+        </fieldset>
+    </div> 
+    <script type="text/javascript"> 
+var username = document.forms["vform"]["username"]; 
+var email = document.forms["vform"]["email"]; 
+var password = document.forms["vform"]["password"]; 
+var password_confirmation = document.forms["vform"]["password_confirmation"]; 
+var kate = document.forms["vform"]["kate"]; 
+
+
+var name_error = document.getElementById("name_error"); 
+var email_error = document.getElementById("email_error"); 
+var pass_error = document.getElementById("pass_error"); 
+var password_error = document.getElementById("password_error"); 
+var plength = password.value; 
+
+username.addEventListener("blur", nameVerify,true); 
+email.addEventListener("blur", emailVerify,true); 
+password.addEventListener("blur", passwordVerify,true); 
+
+
+
+function Validate(){ 
+if(username.value==""){ 
+username.style.border = "2px solid red"; 
+username.style.background = "pink"; 
+name_error.style.color = "red"; 
+name_error.textContent = "Username is required"; 
+username.focus(); 
+return false; 
+} 
+
+
+
+
+// if(email.value==""){ 
+// email.style.border = "2px solid red"; 
+// email.style.background = "pink"; 
+// email_error.style.color = "red"; 
+// email_error.textContent = "email is required"; 
+// email.focus(); 
+// return false; 
+// } 
+
+if(password.value==""){ 
+password.style.border = "2px solid red"; 
+password.style.background = "pink"; 
+pass_error.style.color = "red"; 
+pass_error.textContent = "Password is required"; 
+password.focus(); 
+return false; 
+} 
+// if(password.value!=password_confirmation.value){ 
+// password.style.border = "2px solid red"; 
+// password_confirmation.style.border = "2px solid red"; 
+// password.style.background = "pink"; 
+// password_confirmation.style.background = "pink"; 
+// password_error.style.color = "red"; 
+// password_error.innerHTML = "Password do not match"; 
+// password.focus(); 
+// return false; 
+// } 
+} 
+
+function nameVerify(){ 
+if(username.value!=""){ 
+username.style.border = "3px solid blue"; 
+username.style.background = "white"; 
+name_error.style.color="green"; 
+name_error.innerHTML = "Done!"; 
+return true; 
+} 
+} 
+
+
+
+// function emailVerify(){ 
+
+// if(email.value!=""){ 
+// email.style.border = "3px solid blue"; 
+// email.style.background = "white"; 
+// email_error.style.color="green"; 
+// email_error.innerHTML = "Done!"; 
+// return true; 
+// } 
+// } 
+
+function passwordVerify(){ 
+
+if(password.value!=""){ 
+password.style.border = "3px solid blue"; 
+
+pass_error.innerHTML = ""; 
+return true; 
+} 
+} 
+</script>
+</body>
+</html>
